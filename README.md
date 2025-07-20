@@ -53,11 +53,12 @@ This project implements a solution in Azure Data Factory to solve all of these c
   <img src="./Screenshots/Factory Resources.png" width="400"/>
 </p>
 
----
 
 ## 🔧 Data Factory as Code
 
 The full configuration of the Azure Data Factory pipelines, datasets, and triggers is available as an ARM template in the /arm_template folder, demonstrating Infrastructure as Code (IaC) principles.
+
+---
 
 ## 📂 Project Tasks & Implementation
 
