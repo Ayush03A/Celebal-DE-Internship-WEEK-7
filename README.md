@@ -192,7 +192,7 @@ This project provided deep, hands-on experience in building a real-world ETL sol
 - **Data Integrity:** Learned to proactively handle potential data quality issues like duplicates using transformations like `Aggregate`.
 - **Problem Solving:** Successfully navigated common ADF issues like debug session timeouts and path resolution errors.
 
-### Next Logical Steps
+### 💡 Next Logical Steps
 
 To make this solution even more robust and manageable for production, the next steps would be:
 
