@@ -55,6 +55,10 @@ This project implements a solution in Azure Data Factory to solve all of these c
 
 ---
 
+## 🛠️ Data Factory as Code
+
+The full configuration of the Azure Data Factory pipelines, datasets, and triggers is available as an ARM template in the /arm_template folder, demonstrating Infrastructure as Code (IaC) principles.
+
 ## 📂 Project Tasks & Implementation
 
 ### 1️⃣ Dynamic Ingestion of Date-Stamped CSV Files 📂📅
