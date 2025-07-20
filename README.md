@@ -15,21 +15,15 @@ The pipeline automatically discovers, transforms, and loads multiple types of da
 
 ## 🎯 Problem Statement
 
-A business receives multiple data feeds daily from various source systems, delivered as CSV files into an Azure Data Lake. Each file contains valuable data, but also presents several challenges:
+This project addresses the challenge of building a fully automated ETL pipeline to process daily data feeds delivered as CSV files. The core requirements are to extract critical date information embedded in the filenames, apply unique transformation rules for different file types, handle and eliminate duplicate records to ensure data integrity, and implement a daily truncate-and-load pattern into a structured SQL database.
 
-1.  **Embedded Metadata:** Critical information, such as the reporting date for the data, is not present as a column within the files. Instead, it is part of the filename itself.
-2.  **Multiple File Types:** There are different types of files, each with its own unique file naming convention and data enrichment requirements.
-3.  **Data Integrity Issues:** Source systems may produce duplicate records across different files, which can violate database constraints.
-4.  **Daily Refresh Requirement:** The target analytical tables must be completely refreshed each day following a "truncate and load" pattern.
-5.  **Automation and Reliability:** The entire process must be fully automated and resilient.
+The specific processing logic is summarized below:
 
-The specific requirements for each file type are summarized below:
-
-| File Type / Data Source   | Source Filename Pattern                  | Required Transformations / Logic                                                                               | Target SQL Table       |
-| ------------------------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| **Customer Master**       | `CUST_MSTR_YYYYMMDD.csv`                 | Extract date from filename and add a new **`Date`** column (format: `YYYY-MM-DD`).                             | `dbo.CUST_MSTR`        |
-| **Master-Child Data**     | `master_child_export-YYYYMMDD.csv`       | Extract date from filename and add two new columns: **`Date`** (`YYYY-MM-DD`) and **`DateKey`** (`YYYYMMDD`).   | `dbo.master_child`     |
-| **E-commerce Orders**     | `H_ECOM_ORDER_*.csv`                     | Load data as-is, but **remove duplicate records** based on `OrderID` to ensure primary key integrity.          | `dbo.H_ECOM_Orders`    |
+| File Type           | Filename Pattern                 | Required Logic                                | Target Table        |
+|---------------------|----------------------------------|-----------------------------------------------|---------------------|
+| Customer Master     | `CUST_MSTR_YYYYMMDD.csv`         | Add `Date` column from filename.              | `dbo.CUST_MSTR`     |
+| Master-Child Data   | `master_child_export-YYYYMMDD.csv` | Add `Date` & `DateKey` columns from filename. | `dbo.master_child`  |
+| E-commerce Orders   | `H_ECOM_ORDER_*.csv`             | Deduplicate by `OrderID` and load data.       | `dbo.H_ECOM_Orders` |
 
 This project implements a solution in Azure Data Factory to solve all of these challenges in a scalable, efficient, and reliable manner.
 
@@ -45,6 +39,48 @@ This project implements a solution in Azure Data Factory to solve all of these c
 - **Monitoring:** Azure Monitor
 
 ---
+
+## 🏗️ Azure Resources Used
+
+* Azure Data Factory (ADF)
+* Azure SQL Database + Server
+* Azure Data Lake Storage Gen2
+
+<p align="center">
+  <img src="./images/Pasted%20image%2020250706191351.png" width="700"/>
+</p>
+
+## 🔗 Linked Services
+
+Set up connections for:
+
+* Azure SQL DB
+* Azure Data Lake Gen2
+
+<p align="center">
+  <img src="./images/LS.png" width="600"/>
+</p>
+
+
+## 🗂️ Datasets
+
+You’ll need to define datasets for:
+
+* CSV files (for all three folders)
+* Tables (SQL sink datasets)
+
+<p align="center">
+  <img src="./images/DS.png" width="600"/>
+</p>
+
+
+## 🧪 Pipeline Architecture
+
+<p align="center">
+  <img src="./images/Pasted%20image%2020250706181648.png" width="700"/>
+</p>
+
+This is the master pipeline that processes and loads all 3 types of files into their respective SQL tables on a daily basis.
 
 ## 📂 Project Tasks & Implementation
 
