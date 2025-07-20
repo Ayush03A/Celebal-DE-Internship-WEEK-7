@@ -38,49 +38,18 @@ This project implements a solution in Azure Data Factory to solve all of these c
 - **Automation:** Schedule Triggers
 - **Monitoring:** Azure Monitor
 
+*Resource group*
+<p align="center">
+  <img src="./Screenshots/Resource group.png" width="600"/>
+</p>
+
+ *Linked services*
+<p align="center">
+  <img src="./Screenshots/Linked services.png" width="600"/>
+</p>
+
+
 ---
-
-## 🏗️ Azure Resources Used
-
-* Azure Data Factory (ADF)
-* Azure SQL Database + Server
-* Azure Data Lake Storage Gen2
-
-<p align="center">
-  <img src="./Screenshots/Resource group.png">
-</p>
-
-## 🔗 Linked Services
-
-Set up connections for:
-
-* Azure SQL DB
-* Azure Data Lake Gen2
-
-<p align="center">
-  <img src="./images/LS.png" width="600"/>
-</p>
-
-
-## 🗂️ Datasets
-
-You’ll need to define datasets for:
-
-* CSV files (for all three folders)
-* Tables (SQL sink datasets)
-
-<p align="center">
-  <img src="./images/DS.png" width="600"/>
-</p>
-
-
-## 🧪 Pipeline Architecture
-
-<p align="center">
-  <img src="./images/Pasted%20image%2020250706181648.png" width="700"/>
-</p>
-
-This is the master pipeline that processes and loads all 3 types of files into their respective SQL tables on a daily basis.
 
 ## 📂 Project Tasks & Implementation
 
@@ -97,8 +66,7 @@ This is the master pipeline that processes and loads all 3 types of files into t
 
 - ✅ `DF_Load_CUST_MSTR` Data Flow successfully previews data from the source.
 
-  <!-- TODO: Replace with your screenshot link -->
-  ![CUST_MSTR Data Flow Preview](https://github.com/your-username/your-repo/blob/main/screenshots/cust_mstr_dataflow_preview.png)
+  ![CUST_MSTR Data Flow Preview](https://github.com/Ayush03A/Celebal-DE-Internship-WEEK-7/blob/34eaa698cc671df8689dca070d11e9953638ea30/Screenshots/Data%20Flow%20successfully%20previews%20data%20from%20the%20source.png)
 
 ---
 
@@ -118,15 +86,20 @@ This is the master pipeline that processes and loads all 3 types of files into t
 
 📸 **Evidence:**
 
+- ✅ `DF_Load_CUST_MSTR` Data Flow successfully creates `Date` column.
+
+  <!-- TODO: Replace with your screenshot link -->
+  ![master_child Data Flow with new columns](https://github.com/Ayush03A/Celebal-DE-Internship-WEEK-7/blob/34eaa698cc671df8689dca070d11e9953638ea30/Screenshots/Data%20Flow%20CUST%20MSTR%20Dated.png)
+
 - ✅ `DF_Load_master_child` successfully creates both `Date` and `DateKey` columns.
 
   <!-- TODO: Replace with your screenshot link -->
-  ![master_child Data Flow with new columns](https://github.com/your-username/your-repo/blob/main/screenshots/master_child_derived_columns.png)
+  ![master_child Data Flow with new columns](https://github.com/Ayush03A/Celebal-DE-Internship-WEEK-7/blob/34eaa698cc671df8689dca070d11e9953638ea30/Screenshots/DF_Load_master_child%20successfully%20creates%20both%20Date%20and%20DateKey%20columns.png)
 
 - ✅ `H_ECOM_ORDER` Data Flow using Aggregate to ensure unique OrderIDs.
 
   <!-- TODO: Replace with your screenshot link -->
-  ![H_ECOM_ORDER Aggregate transformation](https://github.com/your-username/your-repo/blob/main/screenshots/hecom_aggregate.png)
+  ![H_ECOM_ORDER Aggregate transformation](https://github.com/Ayush03A/Celebal-DE-Internship-WEEK-7/blob/34eaa698cc671df8689dca070d11e9953638ea30/Screenshots/H_ECOM_ORDER%20Data%20Flow%20using%20Aggregate%20to%20ensure%20unique%20OrderIDs..png)
 
 ---
 
@@ -142,15 +115,10 @@ This is the master pipeline that processes and loads all 3 types of files into t
 
 📸 **Evidence:**
 
-- ✅ Final sequential pipeline showing the `DELETE` script activity for `H_ECOM_Orders`.
-
-  <!-- TODO: Replace with your screenshot link -->
-  ![Pipeline with Delete Script](https://github.com/your-username/your-repo/blob/main/screenshots/pipeline_with_delete_script.png)
-
 - ✅ Data successfully loaded and verified in Azure SQL Database.
 
   <!-- TODO: Replace with your screenshot link -->
-  ![SQL Table Verification](https://github.com/your-username/your-repo/blob/main/screenshots/sql_table_result.png)
+  ![SQL Table Verification](https://github.com/Ayush03A/Celebal-DE-Internship-WEEK-7/blob/34eaa698cc671df8689dca070d11e9953638ea30/Screenshots/SQL%20Databse%20CUST_MSTR%20Table%20.png)
 
 
 ---
@@ -170,12 +138,12 @@ This is the master pipeline that processes and loads all 3 types of files into t
 - ✅ The complete sequential master pipeline in the ADF canvas.
 
   <!-- TODO: Replace with your screenshot link -->
-  ![Final Sequential Pipeline](https://github.com/your-username/your-repo/blob/main/screenshots/final_pipeline_view.png)
+  ![Final Sequential Pipeline](https://github.com/Ayush03A/Celebal-DE-Internship-WEEK-7/blob/34eaa698cc671df8689dca070d11e9953638ea30/Screenshots/master%20pipeline%20in%20the%20ADF%20canvas.png)
   
 - ✅ Successful pipeline run monitored in the ADF "Output" tab.
 
   <!-- TODO: Replace with your screenshot link -->
-  ![Successful Pipeline Run](https://github.com/your-username/your-repo/blob/main/screenshots/successful_pipeline_run.png)
+  ![Successful Pipeline Run](https://github.com/Ayush03A/Celebal-DE-Internship-WEEK-7/blob/34eaa698cc671df8689dca070d11e9953638ea30/Screenshots/Final%20sequential%20pipeline%20showing%20the%20DELETE%20script%20activity%20for%20H_ECOM_Orders.png)
 
 ---
 
