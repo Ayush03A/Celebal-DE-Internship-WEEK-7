@@ -48,6 +48,10 @@ This project implements a solution in Azure Data Factory to solve all of these c
   <img src="./Screenshots/Linked services.png" width="600"/>
 </p>
 
+ *Datasets*
+<p align="center">
+  <img src="./Screenshots/Factory Resources.png" width="600"/>
+</p>
 
 ---
 
@@ -64,6 +68,10 @@ This project implements a solution in Azure Data Factory to solve all of these c
 
 📸 **Evidence:**
 
+- ✅ `DF_Load_CUST_MSTR` Data Flow.
+
+  ![CUST_MSTR Data Flow Preview](https://github.com/Ayush03A/Celebal-DE-Internship-WEEK-7/blob/74d786aacfd8d4b2f0dbac9a352a1e02cbcbc9d5/Screenshots/Data%20Flow%20CUST%20MSTR.png)
+  
 - ✅ `DF_Load_CUST_MSTR` Data Flow successfully previews data from the source.
 
   ![CUST_MSTR Data Flow Preview](https://github.com/Ayush03A/Celebal-DE-Internship-WEEK-7/blob/34eaa698cc671df8689dca070d11e9953638ea30/Screenshots/Data%20Flow%20successfully%20previews%20data%20from%20the%20source.png)
@@ -157,7 +165,6 @@ This project implements a solution in Azure Data Factory to solve all of these c
 | Automated Truncate-and-Load                   | ✅ Done  |
 | Sequential Pipeline Orchestration             | ✅ Done  |
 | Daily Automation via Schedule Trigger         | ✅ Done  |
-| Failure Alerting with Azure Monitor           | ✅ Done  |
 
 ---
 
