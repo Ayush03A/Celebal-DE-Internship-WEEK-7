@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "factoryName": {
+            "value": "adf-daily-etl-project"
+        },
+        "LS_ADLS_Source_accountKey": {
+            "value": ""
+        },
+        "LS_SQL_Target_password": {
+            "value": ""
+        },
+        "LS_ADLS_Source_properties_typeProperties_url": {
+            "value": "https://adlsdailyetlweek7.dfs.core.windows.net/"
+        },
+        "LS_SQL_Target_properties_typeProperties_server": {
+            "value": "sql-daily-etl-server.database.windows.net"
+        },
+        "LS_SQL_Target_properties_typeProperties_database": {
+            "value": "db_daily_etl"
+        },
+        "LS_SQL_Target_properties_typeProperties_userName": {
+            "value": "sqladmin"
+        }
+    }
+}
