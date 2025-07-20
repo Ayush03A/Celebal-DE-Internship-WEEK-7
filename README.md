@@ -47,7 +47,7 @@ This project implements a solution in Azure Data Factory to solve all of these c
 * Azure Data Lake Storage Gen2
 
 <p align="center">
-  <img src="./images/Pasted%20image%2020250706191351.png" width="700"/>
+  <img src="./Screenshots/Resource group.png">
 </p>
 
 ## 🔗 Linked Services
