@@ -50,7 +50,7 @@ This project implements a solution in Azure Data Factory to solve all of these c
 
  *Datasets*
 <p align="center">
-  <img src="./Screenshots/Factory Resources.png" width="600"/>
+  <img src="./Screenshots/Factory Resources.png" width="400"/>
 </p>
 
 ---
