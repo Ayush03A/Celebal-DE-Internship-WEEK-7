@@ -200,3 +200,14 @@ To make this solution even more robust and manageable for production, the next s
 2.  **Advanced Error Handling:** Implement a pattern to catch and log problematic rows or files into a separate "quarantine" location instead of failing the entire pipeline.
 3.  **CI/CD Implementation:** Integrate the ADF project with **Azure DevOps** or **GitHub Actions** to automate deployment across different environments (Dev, Test, Prod), enabling a professional software development lifecycle.
 4.  **Parameterization for Reusability:** Convert hard-coded values (like folder paths and file prefixes) into pipeline parameters to create a generic, reusable data loading framework.
+
+
+## 🙏 Acknowledgements
+
+Huge thanks to my amazing mentors and HR team for constant guidance and feedback throughout this journey:
+
+👨‍🏫 **Jash Tewani & Anurag Yadav** – Technical Mentor  
+🙌 **Prerna Kamat** – HR, Celebal CSI  
+🙌 **Priyanshi Jain** – HR, Celebal CSI  
+🏢 **Celebal Technologies** – For this amazing real-world data engineering internship
+
